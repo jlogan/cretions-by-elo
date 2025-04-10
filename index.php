@@ -135,7 +135,7 @@
                                     </button>
                                 </div>
                                 <video id="hero-video" class="w-full h-full object-cover" autoplay="" loop="" playsinline="" muted="">
-                                    <source src="https://creationsbyelo.com/vid/creation-by-elo-hero-video.mp4" type="video/mp4">
+                                    <source src="vid/creation-by-elo-hero-video.mp4" type="video/mp4">
                                 </video>
                                 <div class="absolute inset-0 ring-1 ring-white/10 rounded-3xl pointer-events-none"></div>
                             </div>
