@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creations By ELO | Private Chef & Catering Services in Richmond, VA</title>
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="Creations By ELO offers private chef services, event catering, and meal prep in Richmond, VA. Experience soulful, feel-good food made with love by Chef Elo.">
     <meta name="keywords" content="Richmond private chef, meal prep Richmond VA, event catering Richmond, personal chef services, Chef Elo, Creations By ELO, private dining Richmond, soulful food, Richmond catering">
@@ -58,7 +63,7 @@
                         <div class="flex items-center space-x-12">
                             <a href="#about" class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">About Me</a>
                             <a href="#services" class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">My Services</a>
-                            <img src="img/logo.jpg" alt="Creations By ELO logo." class="h-20 w-auto mx-8">
+                            <img src="img/logo.png" alt="Creations By ELO logo." class="h-20 w-auto mx-8">
                             <a href="#gallery" class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">My Work</a>
                             <a href="#contact" class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">Hire Me</a>
                         </div>
@@ -70,7 +75,7 @@
 
                     <!-- Mobile Navigation -->
                     <div class="lg:hidden flex items-center justify-between h-20">
-                        <img src="img/logo.jpg" alt="Creations By ELO logo." class="h-16 w-auto">
+                        <img src="img/logo.png" alt="Creations By ELO logo." class="h-16 w-auto">
 
                         <button aria-label="Open Mobile Menu" class="text-[#212936] focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                             <i class="fa-solid fa-bars text-3xl"></i>
@@ -78,8 +83,7 @@
                     </div>
 
                     <!-- Mobile Menu -->
-                    <div id="mobile-menu"
-                        class="hidden lg:hidden absolute top-20 left-0 right-0 bg-white shadow-lg z-50">
+                    <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-0 right-0 bg-white shadow-lg z-50">
                         <div class="flex flex-col p-6 space-y-6">
                             <a href="#about" class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">About Me</a>
                             <a href="#services" class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">My Services</a>
