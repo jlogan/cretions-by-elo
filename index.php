@@ -101,8 +101,13 @@
 
         <!-- Hero Section -->
         <section id="hero" class="relative h-[600px] md:h-[800px]">
-            <div class="absolute inset-0 w-screen">
-                <img class="w-screen h-full object-cover" src="img/elo-cooking-01.jpg" alt="professional chef in modern kitchen plating gourmet dish with artistic presentation, dramatic lighting">
+            <div class="absolute inset-0 w-screen h-full overflow-hidden">
+                <iframe class="w-full h-full absolute top-0 left-0 object-cover"
+                        src="https://www.youtube.com/embed/igDpFxg60qU?autoplay=1&mute=1&loop=1&playlist=igDpFxg60qU&controls=0&showinfo=0&modestbranding=1"
+                        title="Creations By ELO Hero Video"
+                        frameborder="0"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen></iframe>
                 <div class="absolute inset-0 bg-black/50"></div>
             </div>
             <div class="relative container mx-auto px-6 h-full flex items-center">
