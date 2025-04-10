@@ -287,7 +287,7 @@
                         <img src="img/the-original-ronnies-logo.png" alt="Logo for The Original Ronnie's." class="h-32 mb-4">
                         <h3 class="text-xl font-bold">The Original Ronnie's</h3>
                     </a>
-                    <a href="https://www.instagram.com/leboxlunchcafe" target="_blank" rel="noopener noreferrer" class="bg-gray-800 p-8 rounded-xl hover:bg-gray-700 transition flex flex-col items-center">
+                    <a href="https://www.leboxlunch.com" target="_blank" rel="noopener noreferrer" class="bg-gray-800 p-8 rounded-xl hover:bg-gray-700 transition flex flex-col items-center">
                         <img src="img/le-box-lunch-cafe-logo.jpg" alt="Logo for Le Box Lunch Cafe." class="h-32 mb-4">
                         <h3 class="text-xl font-bold">Le Box Lunch Cafe</h3>
                     </a>
