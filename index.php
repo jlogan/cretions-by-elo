@@ -32,56 +32,63 @@
 
     <!-- Fonts & Frameworks -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+    * {
+        font-family: "Inter", sans-serif;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    </style>
 </head>
 
-<body class="body">
+<body class="h-full text-base-content">
 
-    <div class="wrapper">
+    <div class="bg-gray-900 text-white min-h-screen">
 
         <!-- Header -->
-        <header id="header" class="header">
-            <div class="container">
+        <header id="header" class="w-full bg-white border-b border-gray-100">
+            <div class="container mx-auto px-6">
                 <nav class="relative">
 
                     <!-- Desktop Navigation -->
                     <div class="hidden lg:flex items-center justify-between h-20">
-                        <a href="mailto:creationsbyelo@gmail.com" class="nav-link">
+                        <a href="mailto:creationsbyelo@gmail.com" class="text-[#212936] hover:text-blue-700 transition">
                             <i class="fa-regular fa-envelope mr-2"></i>creationsbyelo@gmail.com
                         </a>
 
                         <div class="flex items-center space-x-12">
-                            <a href="#about" class="nav-link">About Me</a>
-                            <a href="#services" class="nav-link">My Services</a>
-                            <img src="img/logo.png" alt="Creations By ELO logo." class="logo">
-                            <a href="#gallery" class="nav-link">My Work</a>
-                            <a href="#contact" class="nav-link">Hire Me</a>
+                            <a href="#about" class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">About Me</a>
+                            <a href="#services" class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">My Services</a>
+                            <img src="img/logo.png" alt="Creations By ELO logo." class="h-20 w-auto mx-8">
+                            <a href="#gallery" class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">My Work</a>
+                            <a href="#contact" class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">Hire Me</a>
                         </div>
 
-                        <a href="tel:8049017935" class="nav-link">
+                        <a href="tel:8049017935" class="text-[#212936] hover:text-blue-700 transition">
                             <i class="fa-solid fa-phone mr-2"></i>804-901-7935
                         </a>
                     </div>
 
                     <!-- Mobile Navigation -->
                     <div class="lg:hidden flex items-center justify-between h-20">
-                        <img src="img/logo.png" alt="Creations By ELO logo." class="logo-small">
+                        <img src="img/logo.png" alt="Creations By ELO logo." class="h-16 w-auto">
 
-                        <button aria-label="Open Mobile Menu" class="nav-link" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                        <button aria-label="Open Mobile Menu" class="text-[#212936] focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                             <i class="fa-solid fa-bars text-3xl"></i>
                         </button>
                     </div>
 
                     <!-- Mobile Menu -->
-                    <div id="mobile-menu" class="mobile-menu">
+                    <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-0 right-0 bg-white shadow-lg z-50">
                         <div class="flex flex-col p-6 space-y-6">
-                            <a href="#about" class="nav-link">About Me</a>
-                            <a href="#services" class="nav-link">My Services</a>
-                            <a href="#gallery" class="nav-link">My Work</a>
-                            <a href="#contact" class="nav-link">Hire Me</a>
+                            <a href="#about" class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">About Me</a>
+                            <a href="#services" class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">My Services</a>
+                            <a href="#gallery" class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">My Work</a>
+                            <a href="#contact" class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">Hire Me</a>
                             <div class="pt-6 border-t border-gray-100 space-y-4">
                                 <a href="tel:8049017935" aria-label="Call Chef Elo" class="block text-[#212936] hover:text-blue-700 transition py-2 text-lg">
                                     <i class="fa-solid fa-phone mr-2"></i>804-901-7935
