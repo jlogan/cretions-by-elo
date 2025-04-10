@@ -119,17 +119,38 @@
                         </div>
                     </div>
                     <div class="order-1 md:order-2">
-                        <div class="relative w-full max-w-[315px] mx-auto aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-yellow-500/20 transform perspective-1000 hover:rotate-y-12 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-yellow-500/10 to-transparent pointer-events-none z-10"></div>
-                            <div class="absolute inset-0 bg-gradient-to-bl from-blue-500/10 to-transparent pointer-events-none z-10"></div>
-                            <video class="absolute inset-0 w-full h-full object-cover" autoplay="" loop="" muted="" playsinline="">
-                                <source src="https://creationsbyelo.com/vid/creation-by-elo-hero-video.mp4" type="video/mp4">
-                            </video>
-                            <div class="absolute -inset-1 bg-gradient-to-r from-yellow-500/20 to-blue-500/20 blur-xl opacity-50 group-hover:opacity-75 transition duration-500"></div>
+                        <div class="relative w-full max-w-[315px] mx-auto">
+                            <div class="absolute inset-0 bg-gradient-to-r from-yellow-500/30 to-blue-500/30 transform rotate-6 rounded-3xl blur-xl"></div>
+                            <div class="absolute inset-0 bg-gradient-to-l from-yellow-500/20 to-blue-500/20 transform -rotate-3 rounded-3xl blur-lg"></div>
+                            <div class="relative aspect-[9/16] rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(255,200,0,0.2)] transform rotate-3 hover:rotate-0 transition-all duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-yellow-500/10 to-transparent pointer-events-none z-10"></div>
+                                <div class="absolute inset-0 bg-gradient-to-bl from-blue-500/10 to-transparent pointer-events-none z-10"></div>
+                                <div class="absolute top-4 right-4 z-20">
+                                    <button onclick="toggleSound(this)" class="bg-black/50 hover:bg-black/70 p-3 rounded-full transition-all">
+                                        <i class="fa-solid fa-volume-xmark text-white"></i>
+                                    </button>
+                                </div>
+                                <video id="hero-video" class="w-full h-full object-cover" autoplay="" loop="" playsinline="" muted="">
+                                    <source src="https://creationsbyelo.com/vid/creation-by-elo-hero-video.mp4" type="video/mp4">
+                                </video>
+                                <div class="absolute inset-0 ring-1 ring-white/10 rounded-3xl pointer-events-none"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <script>
+                function toggleSound(button) {
+                    const video = document.getElementById('hero-video');
+                    if (video.muted) {
+                        video.muted = false;
+                        button.innerHTML = '<i class="fa-solid fa-volume-high text-white"></i>';
+                    } else {
+                        video.muted = true;
+                        button.innerHTML = '<i class="fa-solid fa-volume-xmark text-white"></i>';
+                    }
+                }
+            </script>
         </section>
 
         <!-- About Section -->
