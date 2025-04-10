@@ -100,13 +100,10 @@
         </header>
 
         <!-- Hero Section -->
-        <section id="hero" class="relative h-[600px] md:h-[800px]">
-            <div class="absolute inset-0 w-screen">
-                <img class="w-screen h-full object-cover" src="img/elo-cooking-01.jpg" alt="professional chef in modern kitchen plating gourmet dish with artistic presentation, dramatic lighting">
-                <div class="absolute inset-0 bg-black/50"></div>
-            </div>
-            <div class="relative container mx-auto px-6 h-full flex items-center">
-                <div class="w-full md:max-w-2xl">
+        <section id="hero" class="relative py-20 md:py-32 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
                     <h1 class="mb-8">
                         <span class="block text-5xl md:text-8xl font-bold leading-tight">Real Food</span>
                         <span class="block text-4xl md:text-6xl font-bold">Made with Love</span>
@@ -121,8 +118,24 @@
                         </a>
                     </div>
                 </div>
+                <div class="order-1 md:order-2">
+                    <div class="relative aspect-square rounded-3xl overflow-hidden shadow-2xl ring-4 ring-yellow-500/20 transform md:rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <iframe class="w-full h-full absolute top-0 left-0 object-cover"
+                                src="https://www.youtube.com/embed/YOfNl16oZIU?autoplay=1&mute=1&loop=1&playlist=YOfNl16oZIU&controls=0&showinfo=0&modestbranding=1"
+                                title="Creations By ELO YouTube Short"
+                                frameborder="0"
+                                allow="autoplay; encrypted-media"
+                                allowfullscreen></iframe>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 flex items-center space-x-2">
+                            <i class="fa-brands fa-instagram text-2xl"></i>
+                            <span class="text-sm font-semibold">@creationsbyelo</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- About Section -->
         <section id="about" class="py-16 md:py-24 bg-gray-800">
