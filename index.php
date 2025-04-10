@@ -126,7 +126,7 @@
                                 <div class="absolute inset-0 bg-gradient-to-tr from-yellow-500/10 to-transparent pointer-events-none z-10"></div>
                                 <div class="absolute inset-0 bg-gradient-to-bl from-blue-500/10 to-transparent pointer-events-none z-10"></div>
                                 <div class="absolute top-4 right-4 z-20">
-                                    <button onclick="toggleSound(this)" class="bg-black/50 hover:bg-black/70 p-3 rounded-full transition-all">
+                                    <button  aria-label="Play Video Sound" onclick="toggleSound(this)" class="bg-black/50 hover:bg-black/70 p-3 rounded-full transition-all">
                                         <i class="fa-solid fa-volume-xmark text-white"></i>
                                     </button>
                                 </div>
