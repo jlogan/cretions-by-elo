@@ -1,0 +1,94 @@
+* {
+    font-family: "Inter", sans-serif;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+</style>
+<style>
+/* Plain CSS styles */
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+.nav-link {
+    color: #212936;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0.5rem;
+}
+.nav-link:hover {
+    color: #1d4ed8;
+}
+.wrapper {
+    background: #111;
+    color: #fff;
+    min-height: 100vh;
+}
+.logo {
+    height: 80px;
+    width: auto;
+    margin: 0 2rem;
+}
+.logo-small {
+    height: 64px;
+    width: auto;
+}
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 50;
+    padding: 1.5rem;
+}
+.btn-yellow {
+    background: #facc15;
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.3s;
+}
+.btn-yellow:hover {
+    background: #facc15;
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+.btn-gray {
+    background: #1f2937;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.3s;
+}
+.btn-gray:hover {
+    background: #374151;
+    transform: scale(1.05);
+}
