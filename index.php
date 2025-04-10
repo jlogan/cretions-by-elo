@@ -119,13 +119,13 @@
                         </div>
                     </div>
                     <div class="order-1 md:order-2">
-                        <div class="relative w-full max-w-[315px] mx-auto aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-yellow-500/20">
-                            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/YOfNl16oZIU" title="Chef Elo Cooking" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-                            </iframe>
-                            <div class="absolute bottom-4 left-4 flex items-center space-x-2 z-10">
-                                <i class="fa-brands fa-youtube text-2xl text-red-600"></i>
-                                <span class="text-sm font-semibold">@creationsbyelo</span>
-                            </div>
+                        <div class="relative w-full max-w-[315px] mx-auto aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-yellow-500/20 transform perspective-1000 hover:rotate-y-12 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-yellow-500/10 to-transparent pointer-events-none z-10"></div>
+                            <div class="absolute inset-0 bg-gradient-to-bl from-blue-500/10 to-transparent pointer-events-none z-10"></div>
+                            <video class="absolute inset-0 w-full h-full object-cover" autoplay="" loop="" muted="" playsinline="">
+                                <source src="https://creationsbyelo.com/vid/creation-by-elo-hero-video.mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute -inset-1 bg-gradient-to-r from-yellow-500/20 to-blue-500/20 blur-xl opacity-50 group-hover:opacity-75 transition duration-500"></div>
                         </div>
                     </div>
                 </div>
