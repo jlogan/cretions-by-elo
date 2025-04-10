@@ -33,7 +33,8 @@
     <!-- Fonts & Frameworks -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
 
