@@ -1,7 +1,8 @@
+// tailwind.config.js
 module.exports = {
-  content: ["./*.php", "./**/*.php", "./src/**/*.{html,js}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
+    content: ["./*.{html,php}", "./**/*.{html,php,js}"],
+    theme: {
+      extend: {},
+    },
+    plugins: [],
+  }
