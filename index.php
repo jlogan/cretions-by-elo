@@ -309,41 +309,44 @@
             <div class="container mx-auto px-6">
                 <div class="max-w-2xl mx-auto">
                     <h2 class="text-4xl font-bold text-center mb-6">Let's Make It Happen</h2>
-                    <p class="text-gray-300 text-center mb-12">Ready to book? Got questions? Want to collab? Drop us a message and let's talk food, dates, and how we can make your next meal unforgettable.</p>
+                    <p class="text-gray-300 text-center mb-12">Ready to book? Got questions? Want to collab? Drop us a
+                        message and let's talk food, dates, and how we can make your next meal unforgettable.</p>
 
-                    <form id="contact-form" action="contact.php" method="POST" class="space-y-6">
+                    <form id="contact-form" class="space-y-6">
                         <div>
-                            <label for="name" class="block mb-2">Name</label>
-                            <input id="name" type="text" name="name" required class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <label class="block mb-2">Name</label>
+                            <input type="text"
+                                class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
                         </div>
                         <div>
-                            <label for="email" class="block mb-2">Email</label>
-                            <input id="email" type="email" name="email" required class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <label class="block mb-2">Email</label>
+                            <input type="email"
+                                class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
                         </div>
                         <div>
-                            <label for="phone" class="block mb-2">Phone</label>
-                            <input id="phone" type="phone" name="phone" required class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                        </div>
-                        <div>
-                            <label for="service" class="block mb-2">Service Interested In</label>
-                            <select id="service" name="service" required class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                                <option value="">Select a Service</option>
+                            <label class="block mb-2">Service Interested In</label>
+                            <select
+                                class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                                <option value="">Select a service</option>
                                 <option value="personal-chef">Personal Chef Services</option>
                                 <option value="event-catering">Event Catering</option>
                                 <option value="meal-prep">Meal Prep Services</option>
                             </select>
                         </div>
                         <div>
-                            <label for="message" class="block mb-2">Message</label>
-                            <textarea id="message" name="message" rows="4" required class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+                            <label class="block mb-2">Message</label>
+                            <textarea rows="4"
+                                class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
                         </div>
-                        <button type="submit" id="submit-btn" class="w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-400 transition">
+                        <div class="g-recaptcha" data-sitekey="6Lev4xkrAAAAAMASa5V5rpr2d4_pfwAW3vnMmTCR"></div>
+                        <button type="submit"
+                            class="w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-400 transition">
                             <i class="fa-regular fa-envelope mr-2"></i>Send Message
                         </button>
-                        <div id="form-message" class="mt-4 text-center text-lg"></div>
                     </form>
                 </div>
             </div>
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         </section>
 
         <!-- Footer -->
