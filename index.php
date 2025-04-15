@@ -33,6 +33,7 @@
     <!-- Fonts & Frameworks -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_"></script>
 
     <script>
         function onSubmit(token) {
@@ -344,15 +345,17 @@
                             <textarea rows="4"
                                 class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
                         </div>
-                        <div class="g-recaptcha" data-sitekey="6Lec9hkrAAAAACRzko-voC6hd2KU-GXMezPn76ZP"></div>
-                        <button type="submit"
-                            class="w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-400 transition">
+                        <div class="g-recaptcha" data-sitekey="6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_"></div>
+                        <button class="g-recaptcha w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-400 transition"
+                            data-sitekey="6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_"
+                            data-callback="onSubmit"
+                            type="submit"
+                            data-action="submit">
                             <i class="fa-regular fa-envelope mr-2"></i>Send Message
                         </button>
                     </form>
                 </div>
             </div>
-            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         </section>
 
         <!-- Footer -->
