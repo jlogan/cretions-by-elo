@@ -33,7 +33,7 @@
     <!-- Fonts & Frameworks -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_"></script>
 
     <script>
         function onSubmit(token) {
@@ -369,50 +369,65 @@
     </div>
     
     <script>
-        document.getElementById('contact-form').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-        const messageEl = document.getElementById('form-message');
-        const submitBtn = document.getElementById('submit-btn');
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
 
-        messageEl.textContent = '';
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_', { action: 'submit' }).then(function(token) {
+                    // Append the token to the form
+                    const form = document.getElementById('contact-form');
+                    const tokenInput = document.createElement('input');
+                    tokenInput.setAttribute('type', 'hidden');
+                    tokenInput.setAttribute('name', 'g-recaptcha-response');
+                    tokenInput.setAttribute('value', token);
+                    form.appendChild(tokenInput);
 
-        if (!formData.get('name') || !formData.get('email') || !formData.get('service') || !formData.get('message')) {
-            messageEl.textContent = 'Please fill out all fields.';
-            messageEl.className = 'mt-4 text-center text-lg text-red-500';
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
-            return;
-        }
+                    // Now trigger the actual submit logic
+                    const formData = new FormData(form);
+                    const messageEl = document.getElementById('form-message') || document.createElement('div');
+                    messageEl.id = 'form-message';
+                    if (!messageEl.parentNode) form.appendChild(messageEl);
 
-        try {
-            const response = await fetch(form.action, {
-                method: form.method,
-                body: formData
+                    const submitBtn = document.querySelector('[type="submit"]');
+                    messageEl.textContent = '';
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+
+                    if (!formData.get('name') || !formData.get('email') || !formData.get('service') || !formData.get('message')) {
+                        messageEl.textContent = 'Please fill out all fields.';
+                        messageEl.className = 'mt-4 text-center text-lg text-red-500';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send Message';
+                        return;
+                    }
+
+                    fetch(form.action, {
+                        method: form.method,
+                        body: formData
+                    })
+                    .then(response => response.text())
+                    .then(result => {
+                        if (result.trim() === 'success') {
+                            messageEl.textContent = 'Thank you! Your message has been sent.';
+                            messageEl.className = 'mt-4 text-center text-lg text-green-500';
+                            form.reset();
+                        } else {
+                            messageEl.textContent = 'Oops! Something went wrong. Please try again.';
+                            messageEl.className = 'mt-4 text-center text-lg text-red-500';
+                        }
+                    })
+                    .catch(() => {
+                        messageEl.textContent = 'Server error. Please try again later.';
+                        messageEl.className = 'mt-4 text-center text-lg text-red-500';
+                    })
+                    .finally(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send Message';
+                    });
+                });
             });
-
-            const result = await response.text();
-            if (result.trim() === 'success') {
-                messageEl.textContent = 'Thank you! Your message has been sent.';
-                messageEl.className = 'mt-4 text-center text-lg text-green-500';
-                form.reset();
-            } else {
-                messageEl.textContent = 'Oops! Something went wrong. Please try again.';
-                messageEl.className = 'mt-4 text-center text-lg text-red-500';
-            }
-        } catch (error) {
-            messageEl.textContent = 'Server error. Please try again later.';
-            messageEl.className = 'mt-4 text-center text-lg text-red-500';
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
-        }
-    });
+        });
     </script>
-
 </body>
 
 </html>
