@@ -2,7 +2,7 @@
   "name": "creations-by-elo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.php",
   "scripts": {
     "build": "tailwindcss -i ./src/input.css -o ./css/styles.css"
   },
@@ -14,5 +14,8 @@
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.4"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.4"
   }
 }
