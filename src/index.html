@@ -1,0 +1,733 @@
+<html class="">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        window.FontAwesomeConfig = {
+            autoReplaceSvg: 'nest', // Options: 'nest', 'remove', 'replace'
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
+
+    <style>
+        * {
+            font-family: "Inter", sans-serif;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
+
+    <style>
+        .highlighted-section {
+            outline: 2px solid #3F20FB;
+            background-color: rgba(63, 32, 251, 0.1);
+        }
+
+        .edit-button {
+            position: absolute;
+            z-index: 1000;
+        }
+    </style>
+
+
+    <style>
+        :root {
+            /* Base colors */
+            --color-base: #ffffff;
+            --color-base-50: #f9fafb;
+            --color-base-100: #f3f4f6;
+            --color-base-200: #e5e7eb;
+            --color-base-300: #d1d5db;
+            --color-base-400: #9ca3af;
+            --color-base-500: #6b7280;
+            --color-base-600: #4b5563;
+            --color-base-700: #374151;
+            --color-base-800: #1f2937;
+            --color-base-900: #111827;
+            --color-base-content: #1f2937;
+
+            /* Primary colors */
+            --color-primary: #3b82f6;
+            --color-primary-50: #eff6ff;
+            --color-primary-100: #dbeafe;
+            --color-primary-200: #bfdbfe;
+            --color-primary-300: #93c5fd;
+            --color-primary-400: #60a5fa;
+            --color-primary-500: #3b82f6;
+            --color-primary-600: #2563eb;
+            --color-primary-700: #1d4ed8;
+            --color-primary-800: #1e40af;
+            --color-primary-900: #1e3a8a;
+            --color-primary-focus: #2563eb;
+            --color-primary-content: #ffffff;
+
+            /* Secondary colors */
+            --color-secondary: #8b5cf6;
+            --color-secondary-50: #f5f3ff;
+            --color-secondary-100: #ede9fe;
+            --color-secondary-200: #ddd6fe;
+            --color-secondary-300: #c4b5fd;
+            --color-secondary-400: #a78bfa;
+            --color-secondary-500: #8b5cf6;
+            --color-secondary-600: #7c3aed;
+            --color-secondary-700: #6d28d9;
+            --color-secondary-800: #5b21b6;
+            --color-secondary-900: #4c1d95;
+            --color-secondary-focus: #7c3aed;
+            --color-secondary-content: #ffffff;
+
+            /* Accent colors */
+            --color-accent: #f472b6;
+            --color-accent-50: #fdf2f8;
+            --color-accent-100: #fce7f3;
+            --color-accent-200: #fbcfe8;
+            --color-accent-300: #f9a8d4;
+            --color-accent-400: #f472b6;
+            --color-accent-500: #ec4899;
+            --color-accent-600: #db2777;
+            --color-accent-700: #be185d;
+            --color-accent-800: #9d174d;
+            --color-accent-900: #831843;
+            --color-accent-focus: #db2777;
+            --color-accent-content: #ffffff;
+
+            /* Neutral colors */
+            --color-neutral: #6b7280;
+            --color-neutral-50: #f9fafb;
+            --color-neutral-100: #f3f4f6;
+            --color-neutral-200: #e5e7eb;
+            --color-neutral-300: #d1d5db;
+            --color-neutral-400: #9ca3af;
+            --color-neutral-500: #6b7280;
+            --color-neutral-600: #4b5563;
+            --color-neutral-700: #374151;
+            --color-neutral-800: #1f2937;
+            --color-neutral-900: #111827;
+            --color-neutral-focus: #4b5563;
+            --color-neutral-content: #ffffff;
+
+            /* Info colors */
+            --color-info: #3b82f6;
+            --color-info-50: #eff6ff;
+            --color-info-100: #dbeafe;
+            --color-info-200: #bfdbfe;
+            --color-info-300: #93c5fd;
+            --color-info-400: #60a5fa;
+            --color-info-500: #3b82f6;
+            --color-info-600: #2563eb;
+            --color-info-700: #1d4ed8;
+            --color-info-800: #1e40af;
+            --color-info-900: #1e3a8a;
+            --color-info-focus: #2563eb;
+            --color-info-content: #ffffff;
+
+            /* Success colors */
+            --color-success: #10b981;
+            --color-success-50: #ecfdf5;
+            --color-success-100: #d1fae5;
+            --color-success-200: #a7f3d0;
+            --color-success-300: #6ee7b7;
+            --color-success-400: #34d399;
+            --color-success-500: #10b981;
+            --color-success-600: #059669;
+            --color-success-700: #047857;
+            --color-success-800: #065f46;
+            --color-success-900: #064e3b;
+            --color-success-focus: #059669;
+            --color-success-content: #ffffff;
+
+            /* Warning colors */
+            --color-warning: #f59e0b;
+            --color-warning-50: #fffbeb;
+            --color-warning-100: #fef3c7;
+            --color-warning-200: #fde68a;
+            --color-warning-300: #fcd34d;
+            --color-warning-400: #fbbf24;
+            --color-warning-500: #f59e0b;
+            --color-warning-600: #d97706;
+            --color-warning-700: #b45309;
+            --color-warning-800: #92400e;
+            --color-warning-900: #78350f;
+            --color-warning-focus: #d97706;
+            --color-warning-content: #ffffff;
+
+            /* Error colors */
+            --color-error: #ef4444;
+            --color-error-50: #fef2f2;
+            --color-error-100: #fee2e2;
+            --color-error-200: #fecaca;
+            --color-error-300: #fca5a5;
+            --color-error-400: #f87171;
+            --color-error-500: #ef4444;
+            --color-error-600: #dc2626;
+            --color-error-700: #b91c1c;
+            --color-error-800: #991b1b;
+            --color-error-900: #7f1d1d;
+            --color-error-focus: #dc2626;
+            --color-error-content: #ffffff;
+        }
+    </style>
+
+
+    <style>
+        /* Dark theme */
+        .dark {
+            /* Base colors */
+            --color-base: #1f2937;
+            --color-base-50: #111827;
+            --color-base-100: #1f2937;
+            --color-base-200: #374151;
+            --color-base-300: #4b5563;
+            --color-base-400: #6b7280;
+            --color-base-500: #9ca3af;
+            --color-base-600: #d1d5db;
+            --color-base-700: #e5e7eb;
+            --color-base-800: #f3f4f6;
+            --color-base-900: #f9fafb;
+            --color-base-content: #f9fafb;
+
+            /* Primary colors */
+            --color-primary: #60a5fa;
+            --color-primary-50: #1e3a8a;
+            --color-primary-100: #1e40af;
+            --color-primary-200: #1d4ed8;
+            --color-primary-300: #2563eb;
+            --color-primary-400: #3b82f6;
+            --color-primary-500: #60a5fa;
+            --color-primary-600: #93c5fd;
+            --color-primary-700: #bfdbfe;
+            --color-primary-800: #dbeafe;
+            --color-primary-900: #eff6ff;
+            --color-primary-focus: #3b82f6;
+            --color-primary-content: #1f2937;
+
+            /* Secondary colors */
+            --color-secondary: #a78bfa;
+            --color-secondary-50: #4c1d95;
+            --color-secondary-100: #5b21b6;
+            --color-secondary-200: #6d28d9;
+            --color-secondary-300: #7c3aed;
+            --color-secondary-400: #8b5cf6;
+            --color-secondary-500: #a78bfa;
+            --color-secondary-600: #c4b5fd;
+            --color-secondary-700: #ddd6fe;
+            --color-secondary-800: #ede9fe;
+            --color-secondary-900: #f5f3ff;
+            --color-secondary-focus: #8b5cf6;
+            --color-secondary-content: #1f2937;
+
+            /* Accent colors */
+            --color-accent: #f472b6;
+            --color-accent-50: #831843;
+            --color-accent-100: #9d174d;
+            --color-accent-200: #be185d;
+            --color-accent-300: #db2777;
+            --color-accent-400: #ec4899;
+            --color-accent-500: #f472b6;
+            --color-accent-600: #f9a8d4;
+            --color-accent-700: #fbcfe8;
+            --color-accent-800: #fce7f3;
+            --color-accent-900: #fdf2f8;
+            --color-accent-focus: #ec4899;
+            --color-accent-content: #1f2937;
+
+            /* Neutral colors remain the same as light theme */
+
+            /* Info colors */
+            --color-info: #60a5fa;
+            --color-info-50: #1e3a8a;
+            --color-info-100: #1e40af;
+            --color-info-200: #1d4ed8;
+            --color-info-300: #2563eb;
+            --color-info-400: #3b82f6;
+            --color-info-500: #60a5fa;
+            --color-info-600: #93c5fd;
+            --color-info-700: #bfdbfe;
+            --color-info-800: #dbeafe;
+            --color-info-900: #eff6ff;
+            --color-info-focus: #3b82f6;
+            --color-info-content: #1f2937;
+
+            /* Success colors */
+            --color-success: #34d399;
+            --color-success-50: #064e3b;
+            --color-success-100: #065f46;
+            --color-success-200: #047857;
+            --color-success-300: #059669;
+            --color-success-400: #10b981;
+            --color-success-500: #34d399;
+            --color-success-600: #6ee7b7;
+            --color-success-700: #a7f3d0;
+            --color-success-800: #d1fae5;
+            --color-success-900: #ecfdf5;
+            --color-success-focus: #10b981;
+            --color-success-content: #1f2937;
+
+            /* Warning colors */
+            --color-warning: #fbbf24;
+            --color-warning-50: #78350f;
+            --color-warning-100: #92400e;
+            --color-warning-200: #b45309;
+            --color-warning-300: #d97706;
+            --color-warning-400: #f59e0b;
+            --color-warning-500: #fbbf24;
+            --color-warning-600: #fcd34d;
+            --color-warning-700: #fde68a;
+            --color-warning-800: #fef3c7;
+            --color-warning-900: #fffbeb;
+            --color-warning-focus: #f59e0b;
+            --color-warning-content: #1f2937;
+
+            /* Error colors */
+            --color-error: #f87171;
+            --color-error-50: #7f1d1d;
+            --color-error-100: #991b1b;
+            --color-error-200: #b91c1c;
+            --color-error-300: #dc2626;
+            --color-error-400: #ef4444;
+            --color-error-500: #f87171;
+            --color-error-600: #fca5a5;
+            --color-error-700: #fecaca;
+            --color-error-800: #fee2e2;
+            --color-error-900: #fef2f2;
+            --color-error-focus: #ef4444;
+            --color-error-content: #1f2937;
+        }
+    </style>
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ...{ "transparent": "transparent", "current": "currentColor", "black": "#000000", "white": "#ffffff", "gray": { "50": "#f9fafb", "100": "#f3f4f6", "200": "#e5e7eb", "300": "#d1d5db", "400": "#9ca3af", "500": "#6b7280", "600": "#4b5563", "700": "#374151", "800": "#1f2937", "900": "#111827" }, "red": { "50": "#fef2f2", "100": "#fee2e2", "200": "#fecaca", "300": "#fca5a5", "400": "#f87171", "500": "#ef4444", "600": "#dc2626", "700": "#b91c1c", "800": "#991b1b", "900": "#7f1d1d" }, "yellow": { "50": "#fffbeb", "100": "#fef3c7", "200": "#fde68a", "300": "#fcd34d", "400": "#fbbf24", "500": "#f59e0b", "600": "#d97706", "700": "#b45309", "800": "#92400e", "900": "#78350f" }, "green": { "50": "#ecfdf5", "100": "#d1fae5", "200": "#a7f3d0", "300": "#6ee7b7", "400": "#34d399", "500": "#10b981", "600": "#059669", "700": "#047857", "800": "#065f46", "900": "#064e3b" }, "blue": { "50": "#eff6ff", "100": "#dbeafe", "200": "#bfdbfe", "300": "#93c5fd", "400": "#60a5fa", "500": "#3b82f6", "600": "#2563eb", "700": "#1d4ed8", "800": "#1e40af", "900": "#1e3a8a" }, "indigo": { "50": "#eef2ff", "100": "#e0e7ff", "200": "#c7d2fe", "300": "#a5b4fc", "400": "#818cf8", "500": "#6366f1", "600": "#4f46e5", "700": "#4338ca", "800": "#3730a3", "900": "#312e81" }, "purple": { "50": "#f5f3ff", "100": "#ede9fe", "200": "#ddd6fe", "300": "#c4b5fd", "400": "#a78bfa", "500": "#8b5cf6", "600": "#7c3aed", "700": "#6d28d9", "800": "#5b21b6", "900": "#4c1d95" }, "pink": { "50": "#fdf2f8", "100": "#fce7f3", "200": "#fbcfe8", "300": "#f9a8d4", "400": "#f472b6", "500": "#ec4899", "600": "#db2777", "700": "#be185d", "800": "#9d174d", "900": "#831843" } },
+                        ...{ "primary": { "50": "var(--color-primary-50)", "100": "var(--color-primary-100)", "200": "var(--color-primary-200)", "300": "var(--color-primary-300)", "400": "var(--color-primary-400)", "500": "var(--color-primary-500)", "600": "var(--color-primary-600)", "700": "var(--color-primary-700)", "800": "var(--color-primary-800)", "900": "var(--color-primary-900)", "DEFAULT": "var(--color-primary)", "focus": "var(--color-primary-focus)", "content": "var(--color-primary-content)" }, "secondary": { "50": "var(--color-secondary-50)", "100": "var(--color-secondary-100)", "200": "var(--color-secondary-200)", "300": "var(--color-secondary-300)", "400": "var(--color-secondary-400)", "500": "var(--color-secondary-500)", "600": "var(--color-secondary-600)", "700": "var(--color-secondary-700)", "800": "var(--color-secondary-800)", "900": "var(--color-secondary-900)", "DEFAULT": "var(--color-secondary)", "focus": "var(--color-secondary-focus)", "content": "var(--color-secondary-content)" }, "accent": { "50": "var(--color-accent-50)", "100": "var(--color-accent-100)", "200": "var(--color-accent-200)", "300": "var(--color-accent-300)", "400": "var(--color-accent-400)", "500": "var(--color-accent-500)", "600": "var(--color-accent-600)", "700": "var(--color-accent-700)", "800": "var(--color-accent-800)", "900": "var(--color-accent-900)", "DEFAULT": "var(--color-accent)", "focus": "var(--color-accent-focus)", "content": "var(--color-accent-content)" }, "neutral": { "50": "var(--color-neutral-50)", "100": "var(--color-neutral-100)", "200": "var(--color-neutral-200)", "300": "var(--color-neutral-300)", "400": "var(--color-neutral-400)", "500": "var(--color-neutral-500)", "600": "var(--color-neutral-600)", "700": "var(--color-neutral-700)", "800": "var(--color-neutral-800)", "900": "var(--color-neutral-900)", "DEFAULT": "var(--color-neutral)", "focus": "var(--color-neutral-focus)", "content": "var(--color-neutral-content)" }, "info": { "50": "var(--color-info-50)", "100": "var(--color-info-100)", "200": "var(--color-info-200)", "300": "var(--color-info-300)", "400": "var(--color-info-400)", "500": "var(--color-info-500)", "600": "var(--color-info-600)", "700": "var(--color-info-700)", "800": "var(--color-info-800)", "900": "var(--color-info-900)", "DEFAULT": "var(--color-info)", "focus": "var(--color-info-focus)", "content": "var(--color-info-content)" }, "success": { "50": "var(--color-success-50)", "100": "var(--color-success-100)", "200": "var(--color-success-200)", "300": "var(--color-success-300)", "400": "var(--color-success-400)", "500": "var(--color-success-500)", "600": "var(--color-success-600)", "700": "var(--color-success-700)", "800": "var(--color-success-800)", "900": "var(--color-success-900)", "DEFAULT": "var(--color-success)", "focus": "var(--color-success-focus)", "content": "var(--color-success-content)" }, "warning": { "50": "var(--color-warning-50)", "100": "var(--color-warning-100)", "200": "var(--color-warning-200)", "300": "var(--color-warning-300)", "400": "var(--color-warning-400)", "500": "var(--color-warning-500)", "600": "var(--color-warning-600)", "700": "var(--color-warning-700)", "800": "var(--color-warning-800)", "900": "var(--color-warning-900)", "DEFAULT": "var(--color-warning)", "focus": "var(--color-warning-focus)", "content": "var(--color-warning-content)" }, "error": { "50": "var(--color-error-50)", "100": "var(--color-error-100)", "200": "var(--color-error-200)", "300": "var(--color-error-300)", "400": "var(--color-error-400)", "500": "var(--color-error-500)", "600": "var(--color-error-600)", "700": "var(--color-error-700)", "800": "var(--color-error-800)", "900": "var(--color-error-900)", "DEFAULT": "var(--color-error)", "focus": "var(--color-error-focus)", "content": "var(--color-error-content)" }, "danger": { "50": "var(--color-error-50)", "100": "var(--color-error-100)", "200": "var(--color-error-200)", "300": "var(--color-error-300)", "400": "var(--color-error-400)", "500": "var(--color-error-500)", "600": "var(--color-error-600)", "700": "var(--color-error-700)", "800": "var(--color-error-800)", "900": "var(--color-error-900)", "DEFAULT": "var(--color-error)", "focus": "var(--color-error-focus)", "content": "var(--color-error-content)" }, "failure": { "50": "var(--color-error-50)", "100": "var(--color-error-100)", "200": "var(--color-error-200)", "300": "var(--color-error-300)", "400": "var(--color-error-400)", "500": "var(--color-error-500)", "600": "var(--color-error-600)", "700": "var(--color-error-700)", "800": "var(--color-error-800)", "900": "var(--color-error-900)", "DEFAULT": "var(--color-error)", "focus": "var(--color-error-focus)", "content": "var(--color-error-content)" } },
+                    },
+                },
+            },
+            variants: {
+                extend: {
+                    backgroundColor: ['active', 'group-hover'],
+                    textColor: ['active', 'group-hover'],
+                },
+            },
+            plugins: [],
+        };
+    </script>
+
+</head>
+
+<body class="h-full text-base-content">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creations By ELO</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <div class="bg-gray-900 text-white min-h-screen">
+        <!-- Header -->
+        <header id="header" class="w-full bg-white border-b border-gray-100">
+            <div class="container mx-auto px-6">
+                <nav class="relative">
+                    <!-- Desktop Navigation -->
+                    <div class="hidden lg:flex items-center justify-between h-20">
+                        <a href="mailto:creationsbyelo@gmail.com" class="text-[#212936] hover:text-blue-700 transition">
+                            <i class="fa-regular fa-envelope mr-2"></i>creationsbyelo@gmail.com
+                        </a>
+
+                        <div class="flex items-center space-x-12">
+                            <a href="#about"
+                                class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">About Me</a>
+                            <a href="#services"
+                                class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">My
+                                Services</a>
+                            <img src="https://brogrammersagency.com/wp-content/uploads/2025/04/6B5DFE4B-2626-42D1-87F7-1E5C12698F99.jpg"
+                                alt="Creations By ELO" class="h-20 w-auto mx-8">
+                            <a href="#gallery"
+                                class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">My Work</a>
+                            <a href="#contact"
+                                class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">Hire Me</a>
+                        </div>
+
+                        <a href="tel:8049017935" class="text-[#212936] hover:text-blue-700 transition">
+                            <i class="fa-solid fa-phone mr-2"></i>804-901-7935
+                        </a>
+                    </div>
+
+                    <!-- Mobile Navigation -->
+                    <div class="lg:hidden flex items-center justify-between h-20">
+                        <img src="https://brogrammersagency.com/wp-content/uploads/2025/04/6B5DFE4B-2626-42D1-87F7-1E5C12698F99.jpg"
+                            alt="Creations By ELO" class="h-16 w-auto">
+
+                        <button class="text-[#212936] focus:outline-none"
+                            onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                            <i class="fa-solid fa-bars text-3xl"></i>
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu -->
+                    <div id="mobile-menu"
+                        class="hidden lg:hidden absolute top-20 left-0 right-0 bg-white shadow-lg z-50">
+                        <div class="flex flex-col p-6 space-y-6">
+                            <a href="#about"
+                                class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">About Me</a>
+                            <a href="#services"
+                                class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">My
+                                Services</a>
+                            <a href="#gallery"
+                                class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">My Work</a>
+                            <a href="#contact"
+                                class="text-[#212936] hover:text-blue-700 transition text-xl font-semibold">Hire Me</a>
+                            <div class="pt-6 border-t border-gray-100 space-y-4">
+                                <a href="tel:8049017935"
+                                    class="block text-[#212936] hover:text-blue-700 transition py-2 text-lg">
+                                    <i class="fa-solid fa-phone mr-2"></i>804-901-7935
+                                </a>
+                                <a href="mailto:creationsbyelo@gmail.com"
+                                    class="block text-[#212936] hover:text-blue-700 transition py-2 text-lg">
+                                    <i class="fa-regular fa-envelope mr-2"></i>creationsbyelo@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="hero" class="relative py-20 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <h1 class="mb-8">
+                            <span class="block text-5xl md:text-8xl font-bold leading-tight">Real Food</span>
+                            <span class="block text-4xl md:text-6xl font-bold">Made with Love</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-10 text-gray-200">I'm creating feel-good food
+                            experiences—simple, soulful, and made just for you.</p>
+                        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                            <a href="#contact"
+                                class="whitespace-nowrap w-full md:w-auto bg-yellow-500 text-black px-8 md:px-12 py-4 md:py-5 rounded-full text-xl md:text-2xl font-semibold hover:bg-yellow-400 hover:scale-105 transform transition-all duration-300 flex items-center justify-center">
+                                <i class="fa-solid fa-fire mr-2"></i>Book for Catering
+                            </a>
+                            <a href="#services"
+                                class="whitespace-nowrap w-full md:w-auto bg-gray-800 px-8 md:px-12 py-4 md:py-5 rounded-full text-xl md:text-2xl font-semibold hover:bg-gray-700 hover:scale-105 transform transition-all duration-300 flex items-center justify-center">
+                                <i class="fa-solid fa-utensils mr-2"></i>Explore Services
+                            </a>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <div class="relative w-full max-w-[315px] mx-auto">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-yellow-500/30 to-blue-500/30 transform rotate-6 rounded-3xl blur-xl">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-l from-yellow-500/20 to-blue-500/20 transform -rotate-3 rounded-3xl blur-lg">
+                            </div>
+                            <div
+                                class="relative aspect-[9/16] rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(255,200,0,0.2)] transform rotate-3 hover:rotate-0 transition-all duration-500">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-tr from-yellow-500/10 to-transparent pointer-events-none z-10">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-bl from-blue-500/10 to-transparent pointer-events-none z-10">
+                                </div>
+                                <div class="absolute top-4 right-4 z-20">
+                                    <button onclick="toggleSound(this)"
+                                        class="bg-black/50 hover:bg-black/70 p-3 rounded-full transition-all">
+                                        <i class="fa-solid fa-volume-xmark text-white"></i>
+                                    </button>
+                                </div>
+                                <video id="hero-video" class="w-full h-full object-cover" autoplay="" loop=""
+                                    playsinline="" muted="">
+                                    <source src="https://creationsbyelo.com/vid/creation-by-elo-hero-video.mp4"
+                                        type="video/mp4">
+                                </video>
+                                <div class="absolute inset-0 ring-1 ring-white/10 rounded-3xl pointer-events-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function toggleSound(button) {
+                    const video = document.getElementById('hero-video');
+                    if (video.muted) {
+                        video.muted = false;
+                        button.innerHTML = '<i class="fa-solid fa-volume-high text-white"></i>';
+                    } else {
+                        video.muted = true;
+                        button.innerHTML = '<i class="fa-solid fa-volume-xmark text-white"></i>';
+                    }
+                }
+            </script>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="aspect-[4/5] overflow-hidden rounded-2xl">
+                        <img class="w-full h-full object-cover"
+                            src="https://brogrammersagency.com/wp-content/uploads/2025/04/2E0ED673-ABCF-4D7B-9528-0332978BE455.jpg"
+                            alt="confident african american chef in red chef coat smiling at camera in professional kitchen setting">
+                    </div>
+                    <div>
+                        <h2 class="text-4xl font-bold mb-6">I'm Chef Elo - The People's Chef</h2>
+                        <p class="text-gray-300 mb-8">I bring an easygoing vibe and serious skill to combine comfort,
+                            creativity, and culture in every plate. Whether it's a private dinner or a full-service
+                            event, I'm all about making food personal—and making you feel at home.</p>
+                        <div class="flex space-x-6">
+                            <a href="http://instagram.com/creationsbyelo" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-400 hover:text-yellow-500 transition">
+                                <i class="fa-brands fa-instagram text-2xl"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@creationsbyElo" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-400 hover:text-yellow-500 transition">
+                                <i class="fa-brands fa-tiktok text-2xl"></i>
+                            </a>
+                            <a href="https://x.com/jus_scootie" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-400 hover:text-yellow-500 transition">
+                                <i class="fa-brands fa-twitter text-2xl"></i>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=100073397125829" target="_blank"
+                                rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-500 transition">
+                                <i class="fa-brands fa-facebook text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16">What I Bring to the Table</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div id="personal-chef" class="bg-gray-800 rounded-xl p-6">
+                        <img class="w-full h-48 object-cover rounded-lg mb-6"
+                            src="https://brogrammersagency.com/wp-content/uploads/2025/04/ADFB40AD-3D59-4023-BB91-7E6795959537.jpg"
+                            alt="elegant plated dinner for two with wine glasses">
+                        <h3 class="text-2xl font-bold mb-4">Personal Chef Services</h3>
+                        <p class="text-gray-300 mb-4">Need weekly meals or a special dinner for two? I'll come to you
+                            with handcrafted dishes, tailored to your tastes and schedule.</p>
+                    </div>
+                    <div id="event-catering" class="bg-gray-800 rounded-xl p-6">
+                        <img class="w-full h-48 object-cover rounded-lg mb-6"
+                            src="https://brogrammersagency.com/wp-content/uploads/2025/04/216204A0-142B-4A80-ADAF-74688EB39C72.jpg"
+                            alt="elegant catering setup with various dishes and decorations">
+                        <h3 class="text-2xl font-bold mb-4">Event Catering</h3>
+                        <p class="text-gray-300 mb-4">From birthdays to weddings, brunches to business events I bring
+                            big flavor and smooth service. Custom menus. No stress.</p>
+                    </div>
+                    <div id="meal-prep" class="bg-gray-800 rounded-xl p-6">
+                        <img class="w-full h-48 object-cover rounded-lg mb-6"
+                            src="https://brogrammersagency.com/wp-content/uploads/2025/04/salmon.jpg"
+                            alt="grilled salmon with vegetables meal prep">
+                        <h3 class="text-2xl font-bold mb-4">Meal Prep Services</h3>
+                        <p class="text-gray-300 mb-4">Busy week? Special goals? I'll create custom meal prep plans
+                            fresh, balanced, and made just for you. Vegan, keto, gluten-free, halal? I got you.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 mt-12">
+                    <a href="#contact"
+                        class="w-full md:w-auto bg-yellow-500 text-black px-8 py-3 rounded-full font-semibold hover:bg-yellow-400 transition text-center">
+                        <i class="fa-solid fa-fire mr-2"></i>Book for Catering
+                    </a>
+                    <a href="#contact"
+                        class="w-full md:w-auto bg-gray-800 px-8 py-3 rounded-full font-semibold hover:bg-gray-700 transition text-center">
+                        <i class="fa-solid fa-bowl-food mr-2"></i>Ask About Meal Prep
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inspiration Section -->
+        <section id="inspiration" class="py-24 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16">Rooted in Love, Passed Down Through Generations</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div id="inspiration-content" class="flex flex-col justify-center">
+                        <p class="text-gray-300 mb-8">Before my chef coat and the events, there was the kitchen—where I
+                            watched my mom and grandmother pour love into every pot, pan, and plate. Food isn't just
+                            about taste—it's about care, intention, and bringing people together.</p>
+                        <blockquote class="text-2xl font-bold italic text-yellow-500 mb-4">"They taught me how to cook.
+                            But more than that—they taught me why."</blockquote>
+                        <p class="text-right">— Chef Elo</p>
+                    </div>
+                    <div id="family-photos" class="grid grid-cols-2 gap-6">
+                        <div class="relative">
+                            <img class="w-full h-64 object-cover rounded-xl"
+                                src="https://brogrammersagency.com/wp-content/uploads/2025/04/pebnelo.jpg"
+                                alt="african american chef cooking with his mother in kitchen, warm lighting">
+                            <p class="mt-4 text-gray-300 italic text-sm">"With my Mom—still cooking with love, just like
+                                she taught me."</p>
+                        </div>
+                        <div class="relative">
+                            <img class="w-full h-64 object-cover rounded-xl object-top"
+                                src="https://brogrammersagency.com/wp-content/uploads/2025/04/gma.jpg"
+                                alt="vintage photo of african american grandmother cooking in kitchen, sepia tones">
+                            <p class="mt-4 text-gray-300 italic text-sm">"My Grandmother—where the story truly began."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-6">Food That Looks as Good as It Tastes</h2>
+                <p class="text-gray-300 text-center mb-12">A vibe check in visuals. Scroll through real dishes, event
+                    spreads, and the kind of plating that makes people pull out their phones before they eat.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <img class="w-full aspect-square object-cover rounded-xl"
+                        src="https://brogrammersagency.com/wp-content/uploads/2025/04/1BCAED19-A82B-49A4-AD43-A22528477A5B.jpg"
+                        alt="gourmet plated dish with artistic presentation">
+                    <img class="w-full aspect-square object-cover rounded-xl"
+                        src="https://brogrammersagency.com/wp-content/uploads/2025/04/IMG_6290-scaled.jpg"
+                        alt="elegant catering spread with multiple dishes and decorations">
+                    <img class="w-full aspect-square object-cover rounded-xl"
+                        src="https://brogrammersagency.com/wp-content/uploads/2025/04/IMG_6291-scaled.jpg"
+                        alt="close up of beautifully plated dessert">
+                    <img class="w-full aspect-square object-cover rounded-xl"
+                        src="https://brogrammersagency.com/wp-content/uploads/2025/04/grits.jpeg"
+                        alt="chef preparing food in professional kitchen">
+                    <img class="w-full aspect-square object-cover rounded-xl"
+                        src="https://brogrammersagency.com/wp-content/uploads/2025/04/salmon-eggs.jpeg"
+                        alt="elegant table setting with multiple courses">
+                    <img class="w-full aspect-square object-cover rounded-xl"
+                        src="https://brogrammersagency.com/wp-content/uploads/2025/04/shrimp-plate.jpg"
+                        alt="colorful appetizers on serving platter">
+                    <img class="w-full aspect-square object-cover rounded-xl"
+                        src="https://brogrammersagency.com/wp-content/uploads/2025/04/lobster.jpg"
+                        alt="chef plating with tweezers fine dining">
+                    <img class="w-full aspect-square object-cover rounded-xl"
+                        src="https://brogrammersagency.com/wp-content/uploads/2025/04/Fruit-Shrimp.jpg"
+                        alt="buffet setup with various gourmet dishes">
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-16 md:py-24 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16">Real Ones. Real Reviews.</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div id="testimonial-1" class="bg-gray-900 p-8 rounded-xl">
+                        <p class="text-xl italic mb-4">"Chef Elo came through and made my birthday dinner a straight-up
+                            experience. 10/10."</p>
+                        <p class="font-bold">— Tasha R.</p>
+                    </div>
+                    <div id="testimonial-2" class="bg-gray-900 p-8 rounded-xl">
+                        <p class="text-xl italic mb-4">"That shrimp and grits?! Crazy good. Professional, punctual, and
+                            the food was 🔥."</p>
+                        <p class="font-bold">— Marcus L.</p>
+                    </div>
+                    <div id="testimonial-3" class="bg-gray-900 p-8 rounded-xl">
+                        <p class="text-xl italic mb-4">"Had him cater our family reunion and it felt like a 5-star
+                            restaurant in the backyard."</p>
+                        <p class="font-bold">— Dee &amp; Alisha</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Affiliation Section -->
+        <section id="affiliation" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-6">More Than a Chef - A Culinary Entrepreneur</h2>
+                <p class="text-gray-300 text-center mb-12 max-w-3xl mx-auto">In addition to running Creations By ELO,
+                    I'm also a proud co-owner of two local favorites in the community. Whether it's soulful eats or
+                    fresh, made-to-order lunch vibes, I bring the same heart and hustle to every kitchen I touch.</p>
+                <div class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-12 mb-12">
+                    <a href="https://www.theoriginalronnies.com" target="_blank" rel="noopener noreferrer"
+                        class="bg-gray-800 p-8 rounded-xl hover:bg-gray-700 transition flex flex-col items-center">
+                        <img src="https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/c9465116-1c0c-4897-a1a2-1e6538dc606e/Ronnies mod (3).png"
+                            alt="The Original Ronnie's" class="h-32 mb-4">
+                        <h3 class="text-xl font-bold">The Original Ronnie's</h3>
+                    </a>
+                    <a href="https://www.instagram.com/leboxlunchcafe" target="_blank" rel="noopener noreferrer"
+                        class="bg-gray-800 p-8 rounded-xl hover:bg-gray-700 transition flex flex-col items-center">
+                        <img src="https://brogrammersagency.com/wp-content/uploads/2025/04/lebox.jpg"
+                            alt="Le Box Lunch Cafe" class="h-32 mb-4">
+                        <h3 class="text-xl font-bold">Le Box Lunch Cafe</h3>
+                    </a>
+                </div>
+                <blockquote class="text-2xl font-bold italic text-center text-yellow-500">"Different kitchens, same
+                    passion. Just good food—everywhere I go."</blockquote>
+                <p class="text-center mt-4">— Chef Elo</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="max-w-2xl mx-auto">
+                    <h2 class="text-4xl font-bold text-center mb-6">Let's Make It Happen</h2>
+                    <p class="text-gray-300 text-center mb-12">Ready to book? Got questions? Want to collab? Drop us a
+                        message and let's talk food, dates, and how we can make your next meal unforgettable.</p>
+
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label class="block mb-2">Name</label>
+                            <input type="text"
+                                class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        </div>
+                        <div>
+                            <label class="block mb-2">Email</label>
+                            <input type="email"
+                                class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        </div>
+                        <div>
+                            <label class="block mb-2">Service Interested In</label>
+                            <select
+                                class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                                <option value="">Select a service</option>
+                                <option value="personal-chef">Personal Chef Services</option>
+                                <option value="event-catering">Event Catering</option>
+                                <option value="meal-prep">Meal Prep Services</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block mb-2">Message</label>
+                            <textarea rows="4"
+                                class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+                        </div>
+                        <div class="g-recaptcha" data-sitekey="6Lev4xkrAAAAAMASa5V5rpr2d4_pfwAW3vnMmTCR"></div>
+                        <button type="submit"
+                            class="w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-400 transition">
+                            <i class="fa-regular fa-envelope mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        </section>
+
+        <!-- Footer -->
+        <section id="footer" class="py-8 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center text-gray-400">
+                    <a href="https://brogrammersagency.com" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-yellow-500 transition">Built By Brogrammers</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
