@@ -370,9 +370,11 @@
     
     <script>
         document.getElementById('contact-form').addEventListener('submit', function(e) {
+
             e.preventDefault();
 
             grecaptcha.ready(function() {
+                
                 grecaptcha.execute('6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_', { action: 'submit' }).then(function(token) {
                     // Append the token to the form
                     const form = document.getElementById('contact-form');

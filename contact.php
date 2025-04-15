@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/sendgrid-php/sendgrid-php.php';
+require 'vendor/autoload.php';
 
 function loadEnv($path)
 {
