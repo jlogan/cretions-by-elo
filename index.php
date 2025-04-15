@@ -115,7 +115,6 @@
                             <span class="block text-5xl md:text-8xl font-bold leading-tight">Real Food</span>
                             <span class="block text-4xl md:text-6xl font-bold">Made with Love</span>
                         </h1>
-                        <p class="text-red-500">Test Red Text</p>
                         <p class="text-xl md:text-2xl mb-10 text-gray-200">I'm creating feel-good food experiences—simple, soulful, and made just for you.</p>
                         <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
                             <a href="#contact" class="whitespace-nowrap w-full md:w-auto bg-yellow-500 text-black px-8 md:px-12 py-4 md:py-5 rounded-full text-xl md:text-2xl font-semibold hover:bg-yellow-400 hover:scale-105 transform transition-all duration-300 flex items-center justify-center">
