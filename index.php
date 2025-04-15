@@ -344,7 +344,7 @@
                             <textarea rows="4"
                                 class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
                         </div>
-                        <div class="g-recaptcha" data-sitekey="6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_"></div>
+                        <div class="g-recaptcha" data-sitekey="6Lec9hkrAAAAACRzko-voC6hd2KU-GXMezPn76ZP"></div>
                         <button type="submit"
                             class="w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-400 transition">
                             <i class="fa-regular fa-envelope mr-2"></i>Send Message
