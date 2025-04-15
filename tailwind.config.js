@@ -1,8 +1,5 @@
 module.exports = {
-  content: [
-    './**/*.php',           // Scans all PHP files (like index.php)
-    './src/**/*.{html,js}'  // Scans your HTML or JS files too if needed
-  ],
+  content: ["./*.php", "./**/*.php", "./src/**/*.{html,js}"],
   theme: {
     extend: {},
   },
