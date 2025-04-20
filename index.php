@@ -365,6 +365,7 @@ console.log("Script loaded");
 const form = document.getElementById('contact-form');
 
 if (form) {
+    console.log("Form exists.");
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         console.log("Submitting form");
