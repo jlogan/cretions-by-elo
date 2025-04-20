@@ -336,8 +336,7 @@
                             <label class="block mb-2">Message</label>
                             <textarea name="message" rows="4" class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
                         </div>
-                        <button class="g-recaptcha w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-400 transition"
-                            data-sitekey="6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_"
+                        <button class="w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-400 transition"
                             type="submit"
                             data-action="submit">
                             <i class="fa-regular fa-envelope mr-2"></i>Send Message
@@ -360,74 +359,75 @@
     </div>
     
     <script>
-console.log("Script loaded");
 
-const form = document.getElementById('contact-form');
+        const form = document.getElementById('contact-form');
 
-if (form) {
-    console.log("Form exists.");
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        console.log("Submitting form");
+        if (form) {
 
-        grecaptcha.ready(function() {
-            grecaptcha.execute('6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_', { action: 'submit' }).then(function(token) {
-                console.log("reCAPTCHA token received:", token);
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                console.log("Submitting form");
 
-                const tokenInput = document.createElement('input');
-                tokenInput.setAttribute('type', 'hidden');
-                tokenInput.setAttribute('name', 'g-recaptcha-response');
-                tokenInput.setAttribute('value', token);
-                form.appendChild(tokenInput);
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_', { action: 'submit' }).then(function(token) {
+                        console.log("reCAPTCHA token received:", token);
 
-                const formData = new FormData(form);
-                const messageEl = document.getElementById('form-message');
-                const submitBtn = document.querySelector('[type="submit"]');
+                        const tokenInput = document.createElement('input');
+                        tokenInput.setAttribute('type', 'hidden');
+                        tokenInput.setAttribute('name', 'g-recaptcha-response');
+                        tokenInput.setAttribute('value', token);
+                        form.appendChild(tokenInput);
 
-                messageEl.textContent = '';
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
+                        const formData = new FormData(form);
+                        const messageEl = document.getElementById('form-message');
+                        const submitBtn = document.querySelector('[type="submit"]');
 
-                if (!formData.get('name') || !formData.get('email') || !formData.get('service') || !formData.get('message')) {
-                    messageEl.textContent = 'Please fill out all fields.';
-                    messageEl.className = 'mt-4 text-center text-lg text-red-500';
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send Message';
-                    return;
-                }
+                        messageEl.textContent = '';
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = 'Sending...';
 
-                console.log("Submitting form to:", form.action);
+                        if (!formData.get('name') || !formData.get('email') || !formData.get('service') || !formData.get('message')) {
+                            messageEl.textContent = 'Please fill out all fields.';
+                            messageEl.className = 'mt-4 text-center text-lg text-red-500';
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Send Message';
+                            return;
+                        }
 
-                fetch(form.action, {
-                    method: form.method,
-                    body: formData
-                })
-                .then(response => response.text())
-                .then(result => {
-                    if (result.trim() === 'success') {
-                        messageEl.textContent = 'Thank you! Your message has been sent.';
-                        messageEl.className = 'mt-4 text-center text-lg text-green-500';
-                        form.reset();
-                    } else {
-                        messageEl.textContent = 'Oops! Something went wrong. Please try again.';
-                        messageEl.className = 'mt-4 text-center text-lg text-red-500';
-                    }
-                })
-                .catch(() => {
-                    messageEl.textContent = 'Server error. Please try again later.';
-                    messageEl.className = 'mt-4 text-center text-lg text-red-500';
-                })
-                .finally(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send Message';
+                        console.log("Submitting form to:", form.action);
+
+                        fetch(form.action, {
+                            method: form.method,
+                            body: formData
+                        })
+                        .then(response => response.text())
+                        .then(result => {
+                            if (result.trim() === 'success') {
+                                messageEl.textContent = 'Thank you! Your message has been sent.';
+                                messageEl.className = 'mt-4 text-center text-lg text-green-500';
+                                form.reset();
+                            } else {
+                                messageEl.textContent = 'Oops! Something went wrong. Please try again.';
+                                messageEl.className = 'mt-4 text-center text-lg text-red-500';
+                            }
+                        })
+                        .catch(() => {
+                            messageEl.textContent = 'Server error. Please try again later.';
+                            messageEl.className = 'mt-4 text-center text-lg text-red-500';
+                        })
+                        .finally(() => {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Send Message';
+                        });
+                    });
                 });
             });
-        });
-    });
-} else {
-    console.log("Form element not found!");
-}
-</script>
+        } else {
+            console.log("Form element not found!");
+        }
+    
+    </script>
+
 </body>
 
 </html>
