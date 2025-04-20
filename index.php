@@ -317,18 +317,15 @@
                     <form id="contact-form" action="contact.php" method="POST" class="space-y-6">
                         <div>
                             <label class="block mb-2">Name</label>
-                            <input type="text" name="name"
-                                class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <input type="text" name="name" class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
                         </div>
                         <div>
                             <label class="block mb-2">Email</label>
-                            <input type="email" name="email"
-                                class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <input type="email" name="email" class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
                         </div>
                         <div>
                             <label class="block mb-2">Service Interested In</label>
-                            <select name="service"
-                                class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <select name="service" class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
                                 <option value="">Select a service</option>
                                 <option value="personal-chef">Personal Chef Services</option>
                                 <option value="event-catering">Event Catering</option>
@@ -337,8 +334,7 @@
                         </div>
                         <div>
                             <label class="block mb-2">Message</label>
-                            <textarea name="message" rows="4"
-                                class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+                            <textarea name="message" rows="4" class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
                         </div>
                         <button class="g-recaptcha w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-400 transition"
                             data-sitekey="6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_"
