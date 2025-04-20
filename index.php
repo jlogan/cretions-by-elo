@@ -368,6 +368,7 @@
  
             grecaptcha.ready(function() {
                 grecaptcha.execute('6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_', { action: 'submit' }).then(function(token) {
+                    console.log("reCAPTCHA token received:", token);
                     const tokenInput = document.createElement('input');
                     tokenInput.setAttribute('type', 'hidden');
                     tokenInput.setAttribute('name', 'g-recaptcha-response');
@@ -391,7 +392,7 @@
                         submitBtn.textContent = 'Send Message';
                         return;
                     }
- 
+                    console.log("Submitting form to:", form.action);
                     fetch(form.action, {
                         method: form.method,
                         body: formData
