@@ -35,11 +35,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_"></script>
 
-    <script>
-        function onSubmit(token) {
-            document.getElementById("contact-form").submit();
-        }
-    </script>
 
     
     <!-- Styles -->
@@ -347,7 +342,6 @@
                         </div>
                         <button class="g-recaptcha w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-400 transition"
                             data-sitekey="6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_"
-                            data-callback="onSubmit"
                             type="submit"
                             data-action="submit">
                             <i class="fa-regular fa-envelope mr-2"></i>Send Message
