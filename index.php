@@ -342,6 +342,7 @@
                             data-action="submit">
                             <i class="fa-regular fa-envelope mr-2"></i>Send Message
                         </button>
+                        <div id="form-message" class="mt-4 text-center text-lg"></div>
                     </form>
                 </div>
             </div>
