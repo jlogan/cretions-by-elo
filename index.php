@@ -365,7 +365,7 @@
  
         form.addEventListener('submit', function(e) {
             e.preventDefault();
- 
+            console.log("Submitting form ");
             grecaptcha.ready(function() {
                 grecaptcha.execute('6Lec9hkrAAAAADtPzK8lkRUcKYjtdOeiAV1Tgz6_', { action: 'submit' }).then(function(token) {
                     console.log("reCAPTCHA token received:", token);
