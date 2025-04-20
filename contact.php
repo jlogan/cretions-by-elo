@@ -1,4 +1,6 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: text/plain");
 
 require 'vendor/autoload.php';
 
@@ -39,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $emailToSend->setFrom("noreply@brogrammersagency.com", "Brogrammers Agency");
     $emailToSend->setSubject("New Message From creationsbyelo.com");
     $emailToSend->addTo("nagolpj@gmail.com", "Jay Logan");
-    //$emailToSend->addTo("creationsbyelo@gmail.com", "Creations By ELO");
+    $emailToSend->addTo("creationsbyelo@gmail.com", "Creations By ELO");
     $emailToSend->setReplyTo($email, $name);
     $emailToSend->addContent("text/plain", $email_content);
 
