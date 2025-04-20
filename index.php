@@ -319,20 +319,20 @@
                     <p class="text-gray-300 text-center mb-12">Ready to book? Got questions? Want to collab? Drop us a
                         message and let's talk food, dates, and how we can make your next meal unforgettable.</p>
 
-                    <form id="contact-form" class="space-y-6">
+                    <form id="contact-form" action="contact.php" method="POST" class="space-y-6">
                         <div>
                             <label class="block mb-2">Name</label>
-                            <input type="text"
+                            <input type="text" name="name"
                                 class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
                         </div>
                         <div>
                             <label class="block mb-2">Email</label>
-                            <input type="email"
+                            <input type="email" name="email"
                                 class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
                         </div>
                         <div>
                             <label class="block mb-2">Service Interested In</label>
-                            <select
+                            <select name="service"
                                 class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
                                 <option value="">Select a service</option>
                                 <option value="personal-chef">Personal Chef Services</option>
@@ -342,7 +342,7 @@
                         </div>
                         <div>
                             <label class="block mb-2">Message</label>
-                            <textarea rows="4"
+                            <textarea name="message" rows="4"
                                 class="w-full bg-gray-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
                         </div>
                         <button class="g-recaptcha w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-400 transition"
