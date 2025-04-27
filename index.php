@@ -179,9 +179,6 @@
                             <a href="https://www.tiktok.com/@creationsbyElo" aria-label="TikTok" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-500 transition">
                                 <i class="fa-brands fa-tiktok text-2xl"></i>
                             </a>
-                            <a href="https://x.com/jus_scootie" aria-label="X (formerly Twitter)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-500 transition">
-                                <i class="fa-brands fa-twitter text-2xl"></i>
-                            </a>
                             <a href="https://www.facebook.com/profile.php?id=100073397125829" aria-label="Facebook" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-500 transition">
                                 <i class="fa-brands fa-facebook text-2xl"></i>
                             </a>
